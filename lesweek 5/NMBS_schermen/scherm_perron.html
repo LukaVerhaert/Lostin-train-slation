@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Perronscherm — exact</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body style="display:flex;align-items:center;justify-content:center;padding:26px;background:var(--page-bg)">
+
+  <div class="perron-screen" role="region" aria-label="Perronscherm">
+    <div class="perron-top">
+      <div class="box" style="line-height:0.9">PERRON<br><span style="font-size:22px">5</span></div>
+      <div style="font-weight:900">11:05</div>
+      <div style="margin-left:auto;font-weight:700">maandag 6</div>
+    </div>
+
+    <div class="perron-content">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <div style="font-weight:900">10:55 • Antwerpen-Centraal • IC205</div>
+        <div class="perron-qr">QR</div>
+      </div>
+
+      <div class="perron-list" role="list" aria-label="rij van vertrekkende treinen">
+        <div class="perron-row highlight" role="listitem">
+          <div class="left">
+            <div><span class="time">10:55</span> <span class="delay">+5</span></div>
+            <div class="meta">Antwerpen-Centraal — IC205</div>
+          </div>
+          <div style="text-align:right"><div class="meta">P5</div></div>
+        </div>
+
+        <div class="perron-row" role="listitem">
+          <div class="left">
+            <div class="time">10:55</div>
+            <div class="meta">Antwerpen-Centraal — IC205</div>
+          </div>
+          <div style="text-align:right"><div class="meta">P5</div></div>
+        </div>
+
+        <div class="perron-row strike" role="listitem">
+          <div class="left">
+            <div class="time">10:50</div>
+            <div class="meta">Antwerpen-Centraal — IC205</div>
+          </div>
+          <div style="text-align:right"><div class="meta">P5</div></div>
+        </div>
+
+        <div class="perron-row" role="listitem">
+          <div class="left">
+            <div class="time">11:00</div>
+            <div class="meta">Antwerpen-Centraal — IC205</div>
+          </div>
+          <div style="text-align:right"><div class="meta">P5</div></div>
+        </div>
+
+        <div class="perron-row" role="listitem">
+          <div class="left">
+            <div class="time">11:05</div>
+            <div class="meta">Antwerpen-Centraal — IC205</div>
+          </div>
+          <div style="text-align:right"><div class="meta">P5</div></div>
+        </div>
+
+        <div class="perron-row" role="listitem">
+          <div class="left">
+            <div class="time">11:15</div>
+            <div class="meta">Antwerpen-Centraal — IC205</div>
+          </div>
+          <div style="text-align:right"><div class="meta">P5</div></div>
+        </div>
+
+        <div class="perron-row" role="listitem">
+          <div class="left">
+            <div class="time">11:25</div>
+            <div class="meta">Antwerpen-Centraal — IC105</div>
+          </div>
+          <div style="text-align:right"><div class="meta">P5</div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- floating indicator (like L in PNG) -->
+    <div style="position:absolute;right:46px;top:46%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:var(--panel-dark);color:white;display:flex;align-items:center;justify-content:center;font-weight:900;box-shadow:0 8px 20px rgba(0,0,0,0.12)">L</div>
+
+  </div>
+
+</body>
+</html>

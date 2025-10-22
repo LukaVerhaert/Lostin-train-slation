@@ -1,0 +1,204 @@
+/* style.css - gedeelde stijlen voor alle 3 schermen
+   Lettertype: Roboto Slab via Google Fonts in HTML head
+   Kleuren: bg #EEF1F9, panel-light #D2DEFF, panel-dark #98B4D9
+*/
+
+:root{
+  --page-bg: #EEF1F9;
+  --panel-light: #D2DEFF;
+  --panel-dark:  #98B4D9;
+  --white: #ffffff;
+  --muted: #213044;
+  --black: #0b0b0b;
+  --red: #e11;
+}
+
+/* Reset + body */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--page-bg);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-family:"Roboto Slab", serif;color:var(--muted);display:flex;align-items:center;justify-content:center;padding:26px}
+
+/* Fixed screen dimensions to match PNG proportions */
+.screen{
+  width:980px;
+  height:560px;
+  background:var(--white);
+  border-radius:6px;
+  overflow:hidden;
+  box-shadow:0 10px 36px rgba(15,20,30,0.12);
+  display:flex;
+  flex-direction:column;
+}
+
+/* thin black top strip like PDF */
+.top-strip{
+  height:34px;
+  background:#0b0b0b;
+  color:var(--white);
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:6px 14px;
+  font-weight:700;
+  font-size:13px;
+}
+
+/* content area */
+.content{
+  display:flex;
+  gap:16px;
+  padding:16px;
+  flex:1;
+  align-items:flex-start;
+}
+
+/* Shared panel look */
+.panel{
+  background:linear-gradient(180deg,var(--panel-light), rgba(210,222,255,0.96));
+  border-radius:6px;
+  padding:12px;
+  box-shadow: inset 0 1px rgba(255,255,255,0.6);
+}
+
+/* OVERZICHTS - left (big table) specifics */
+.overview-left{
+  flex:1;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* small icons/header row inside left */
+.left-top{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  font-weight:700;
+  color:var(--muted);
+}
+
+/* table styling tuned to match row heights */
+.overview-table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:6px;
+  font-weight:700;
+  font-size:16px;
+}
+.overview-table tr{height:56px}
+.overview-table td{
+  padding:8px 12px;
+  vertical-align:middle;
+  border-bottom:1px solid rgba(0,0,0,0.06);
+}
+.time-td{width:140px;font-weight:900;}
+.dest-td{font-size:18px}
+.plat-td{width:80px;text-align:center}
+.train-td{width:110px;text-align:center}
+
+/* alternating shading */
+.overview-table tr:nth-child(odd) td{background:rgba(0,0,0,0.03)}
+
+/* red strikethrough row */
+.strike td{color:rgba(0,0,0,0.45); position:relative}
+.strike td::after{
+  content:"";
+  position:absolute;
+  left:6%;
+  right:6%;
+  top:50%;
+  height:3px;
+  background:#c22;
+  transform:translateY(-50%);
+}
+
+/* small red delay badge */
+.delay{color:var(--red);font-weight:900;margin-left:6px}
+
+/* RIGHT column - clock/status/logo */
+.overview-right{
+  width:320px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+/* inside right panel */
+.clock-block{
+  background:var(--white);
+  border-radius:6px;
+  padding:12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+.clock-block .weather{display:flex;flex-direction:column;align-items:center}
+.clock-big{font-size:40px;font-weight:900;line-height:1}
+.date-small{font-weight:700}
+
+/* logo circle */
+.logo-b{
+  width:56px;height:56px;border-radius:50%;border:4px solid #1f5fbf;display:flex;align-items:center;justify-content:center;font-weight:900;color:#1f5fbf;background:#fff;font-size:20px;
+}
+
+/* PERRON screen */
+.perron-screen{
+  width:320px;
+  height:520px;
+  background:var(--white);
+  border-radius:6px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+.perron-top{
+  background:#111;color:#fff;padding:10px;display:flex;gap:10px;align-items:center;font-weight:900;
+}
+.perron-top .box{background:var(--panel-light);color:var(--muted);padding:8px 10px;border-radius:4px;font-size:18px;font-weight:900}
+.perron-content{padding:10px;flex:1;display:flex;flex-direction:column}
+.perron-qr{font-weight:900}
+.perron-list{background:linear-gradient(180deg,var(--panel-light),rgba(210,222,255,0.95));border-radius:6px;padding:6px;overflow:auto;height:420px}
+.perron-row{display:flex;justify-content:space-between;align-items:center;padding:8px;border-bottom:1px solid rgba(0,0,0,0.04)}
+.perron-row .time{font-weight:900}
+.perron-row.highlight{background:rgba(0,0,0,0.05);border-radius:4px}
+.perron-row.strike{color:rgba(0,0,0,0.45);position:relative}
+.perron-row.strike::after{content:"";position:absolute;left:6%;right:6%;top:50%;height:2px;background:#c22;transform:translateY(-50%)}
+
+/* WAGON screen */
+.wagon-screen{
+  flex:1;
+  height:520px;
+  background:var(--white);
+  border-radius:6px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+.wagon-top{background:#111;color:#fff;padding:8px 12px;display:flex;align-items:center;gap:12px;font-weight:900}
+.wagon-main{display:flex;gap:12px;padding:12px;flex:1}
+.wagon-left{flex:1;background:linear-gradient(180deg,var(--panel-light),rgba(210,222,255,0.95));padding:12px;border-radius:6px;display:flex;flex-direction:column;gap:10px}
+.stop-row{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:6px}
+.stop-row:nth-child(odd){background:rgba(0,0,0,0.03)}
+.stop-row.current{background:linear-gradient(90deg, rgba(152,180,217,0.18), rgba(152,180,217,0.08));font-weight:900}
+
+/* right side wagon icons */
+.wagon-right{width:420px;background:linear-gradient(180deg,var(--panel-light),var(--panel-light));padding:12px;border-radius:6px;display:flex;flex-direction:column;gap:12px}
+.icons-grid{display:flex;flex-wrap:wrap;gap:8px}
+.icon-box{width:64px;height:64px;border-radius:6px;background:var(--panel-dark);display:flex;align-items:center;justify-content:center;color:white;font-weight:900;position:relative}
+.icon-num{position:absolute;top:-8px;left:-8px;background:#fff;color:var(--panel-dark);padding:4px 7px;border-radius:12px;font-weight:900;font-size:12px}
+
+/* info / qr */
+.info-block{background:linear-gradient(180deg,#e8efff,#f5f9ff);padding:10px;border-radius:6px;font-weight:700;}
+
+/* small helpers */
+.small{font-size:13px;color:rgba(0,0,0,0.7)}
+.center{text-align:center}
+
+/* responsive - still maintain proportions */
+@media (max-width:1000px){
+  .screen{transform:scale(0.92);transform-origin:center top}
+}
